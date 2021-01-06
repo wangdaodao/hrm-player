@@ -1,13 +1,13 @@
 {
-  "name": "videojs-player",
+  "name": "hrm-player",
   "description": "A videojs player component for Vue.js",
   "version": "1.0.0",
   "author": "wangdaodao <hi@wangdaodao.com>",
   "license": "MIT",
   "private": false,
-  "main": "dist/videojs-player.common.js",
-  "browser": "dist/videojs-player.umd.js",
-  "style": "dist/videojs-player.css",
+  "main": "dist/hrm-player.common.js",
+  "browser": "dist/hrm-player.umd.js",
+  "style": "dist/hrm-player.css",
   "keywords": [
     "video",
     "rtmp",
@@ -21,7 +21,7 @@
     "*.js"
   ],
   "scripts": {
-    "package": "vue-cli-service build --target lib --name videojs-player ./src/components/index.js",
+    "package": "vue-cli-service build --target lib --name hrm-player ./src/components/index.js",
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint"
   },

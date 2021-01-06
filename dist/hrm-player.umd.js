@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["videojs-player"] = factory();
+		exports["hrm-player"] = factory();
 	else
-		root["videojs-player"] = factory();
+		root["hrm-player"] = factory();
 })((typeof self !== 'undefined' ? self : this), function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -12752,12 +12752,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
 var es_function_name = __webpack_require__("b0c0");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12c83494-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/index.vue?vue&type=template&id=28243394&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12c83494-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/index.vue?vue&type=template&id=1e0a559a&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('video',_vm._b({ref:"player",staticClass:"video-js",attrs:{"data-setup":"{}"}},'video',_vm.$attrs,false),[_c('p',{staticClass:"vjs-no-js"},[_vm._v(" 您的浏览器不支持 video 标签。 ")])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/index.vue?vue&type=template&id=28243394&
+// CONCATENATED MODULE: ./src/components/index.vue?vue&type=template&id=1e0a559a&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.symbol.js
 var es_symbol = __webpack_require__("a4d3");
@@ -67007,7 +67007,7 @@ video_es.addLanguage('zh-CN', zh_CN); //这里可以导入其他文件（比如�
 //例如：import 组件名称 from '组件路径';
 
 /* harmony default export */ var componentsvue_type_script_lang_js_ = ({
-  name: 'videojs-player',
+  name: 'hrm-player',
   //引入组件
   props: {
     source: String,
@@ -67250,7 +67250,7 @@ components.install = function (Vue) {
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.videojsPlayer = components;
+  window.hrmPlayer = components;
   window.Vue.use(components);
 }
 
@@ -67535,4 +67535,4 @@ module.exports = NATIVE_SYMBOL
 
 /******/ });
 });
-//# sourceMappingURL=videojs-player.umd.js.map
+//# sourceMappingURL=hrm-player.umd.js.map

@@ -1,4 +1,4 @@
-# videojs-player 播放器
+# hrm-player 播放器
 
 * 😊 基于 Vue + [`Video.js 7+`](https://github.com/videojs/video.js) 开发；
 * 😂 支持现代浏览器；
@@ -7,22 +7,22 @@
 ## NPM安装
 
 ```bash
-npm i videojs-player --save
+npm i hrm-player --save
 ```
 
 ## CDN引用
 
-目前可以通过 [unpkg.com/videojs-player](https://unpkg.com/videojs-player) 或者 [www.jsdelivr.com/package/npm/videojs-player](https://www.jsdelivr.com/package/npm/videojs-player) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
+目前可以通过 [unpkg.com/hrm-player](https://unpkg.com/hrm-player) 或者 [www.jsdelivr.com/package/npm/hrm-player](https://www.jsdelivr.com/package/npm/hrm-player) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/videojs-player/dist/videojs-player.css">
+<link rel="stylesheet" href="https://unpkg.com/hrm-player/dist/hrm-player.css">
 <!-- 引入组件库 -->
-<script src="https://unpkg.com/videojs-player/dist/videojs-player.umd.min.js"></script>
+<script src="https://unpkg.com/hrm-player/dist/hrm-player.umd.min.js"></script>
 
 <!-- 或者 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-player/dist/videojs-player.css">
-<script src="https://cdn.jsdelivr.net/npm/videojs-player/dist/videojs-player.umd.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hrm-player/dist/hrm-player.css">
+<script src="https://cdn.jsdelivr.net/npm/hrm-player/dist/hrm-player.umd.min.js"></script>
 ```
 
 ## 使用
@@ -34,15 +34,15 @@ npm i videojs-player --save
 import Vue from 'vue'
 import App from './App.vue'
 
-import 'videojs-player/dist/videojs-player.css'
-import videojsPlayer from 'videojs-player'
-Vue.use(videojsPlayer)
+import 'hrm-player/dist/hrm-player.css'
+import hrmPlayer from 'hrm-player'
+Vue.use(hrmPlayer)
 ```
 
 ```vue
 <template>
   <div id="app">
-    <videojs-player :width="900" :height="500" :autoplay="true" :controls="true" ref="myPlayer" :source="src" type="rtmp/flv" />
+    <hrm-player :width="900" :height="500" :autoplay="true" :controls="true" ref="myPlayer" :source="src" type="rtmp/flv" />
   </div>
 </template>
 
@@ -63,18 +63,18 @@ export default {
 ```vue
 <template>
   <div id="app">
-    <videojs-player :width="900" :height="500" :autoplay="true" :controls="true" ref="myPlayer" :source="src"/>
+    <hrm-player :width="900" :height="500" :autoplay="true" :controls="true" ref="myPlayer" :source="src"/>
   </div>
 </template>
 
 <script>
-import 'videojs-player/dist/videojs-player.css'
-import videojsPlayer from 'videojs-player'
+import 'hrm-player/dist/hrm-player.css'
+import hrmPlayer from 'hrm-player'
 
 export default {
   name: 'App',
   components: {
-    videojsPlayer,
+    hrmPlayer,
   },
   data() {
     return {
@@ -85,7 +85,7 @@ export default {
 </script>
 ```
 
-### videojsPlayer Attributes
+### hrmPlayer Attributes
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | source | 播放流 | string | — | — |
@@ -110,7 +110,7 @@ export default {
 ```vue
 <template>
   <div>
-    <videojs-player :options="options" :source="src" type="rtmp/flv"/>
+    <hrm-player :options="options" :source="src" type="rtmp/flv"/>
   </div>
 </template>
 <script>
@@ -142,7 +142,7 @@ export default {
     <button @click="change(2)">央视2</button>
     <button @click="change(3)">央视3</button>
     <button @click="change(4)">央视4</button>
-    <videojs-player :width="900" :height="500" :autoplay="true" :controls="true" :source="src"/>
+    <hrm-player :width="900" :height="500" :autoplay="true" :controls="true" :source="src"/>
   </div>
 </template>
 
@@ -185,7 +185,7 @@ export default {
     <button @click="change(1)">RTMP</button>
     <button @click="change(2)">HLS</button>
     <button @click="change(3)">MP4</button>
-    <videojs-player :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" :source="src" :type="type" />
+    <hrm-player :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" :source="src" :type="type" />
   </div>
 </template>
 

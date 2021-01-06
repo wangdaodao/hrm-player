@@ -3,17 +3,17 @@
     <button @click="change(1)">RTMP</button>
     <button @click="change(2)">MP4</button>
     <button @click="change(3)">HLS</button>
-    <videojs-player :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" ref="myPlayer" :source="src" :type="type" />
+    <hrm-player :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" ref="myPlayer" :source="src" :type="type" />
   </div>
 </template>
 
 <script>
-import videojsPlayer from '../src/components/index.js';
+import hrmPlayer from '../src/components/index.js';
 
 export default {
   name: 'App',
   components: {
-    videojsPlayer,
+    hrmPlayer,
   },
   data() {
     return {

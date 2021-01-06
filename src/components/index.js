@@ -1,12 +1,12 @@
-import videojsPlayer from './index.vue'
+import hrmPlayer from './index.vue'
 
-videojsPlayer.install = function (Vue) {
-  Vue.component(videojsPlayer.name, videojsPlayer)
+hrmPlayer.install = function (Vue) {
+  Vue.component(hrmPlayer.name, hrmPlayer)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.videojsPlayer = videojsPlayer;
-  window.Vue.use(videojsPlayer);
+  window.hrmPlayer = hrmPlayer;
+  window.Vue.use(hrmPlayer);
 }
 
-export default videojsPlayer
+export default hrmPlayer
