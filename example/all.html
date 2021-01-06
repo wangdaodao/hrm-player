@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>切换播放</title>
+  <link rel="stylesheet" href="./lib/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hrm-player/dist/hrm-player.css">
+  <script src="./lib/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hrm-player/dist/hrm-player.umd.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="change(1)">HLS</button>
+    <button @click="change(2)">RTMP</button>
+    <button @click="change(3)">MP4</button>
+    <hrm-player :width="900" :height="500" :autoplay="true" :controls="true" ref="myPlayer" :source="src"
+      :type="type" />
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        type: null,
+        src: '',
+      },
+      methods: {
+        change(val) {
+          switch (val) {
+            case 1:
+              this.src = 'http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8';
+              this.type = 'application/x-mpegURL'
+              break;
+            case 2:
+              this.src = 'rtmp://58.200.131.2:1935/livetv/btv3';
+              this.type = 'rtmp/flv'
+              break;
+            case 3:
+              this.src = 'http://resource.wangdaodao.com/402670506.mp4';
+              this.type = 'video/mp4';
+              break;
+          }
+        },
+      }
+    })
+  </script>
+</body>
+
+</html>

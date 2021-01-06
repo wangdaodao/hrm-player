@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RTMP默认播放</title>
+  <link rel="stylesheet" href="./lib/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hrm-player/dist/hrm-player.css">
+  <script src="./lib/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hrm-player/dist/hrm-player.umd.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <hrm-player :options="options" :source="src" type="rtmp/flv" />
+</div>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      options: {
+        autoplay: true,
+        controls: true,
+        preload: "auto",
+        width: 800,
+        height:400,
+      },
+      src: "rtmp://58.200.131.2:1935/livetv/btv1"
+    }
+  })
+</script>
+</body>
+</html>

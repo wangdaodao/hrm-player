@@ -124,7 +124,7 @@ export default {
         width: 800,
         height:400,
       },
-      src: "rtmp://58.200.131.2:1935/livetv/btv4"
+      src: "rtmp://58.200.131.2:1935/livetv/btv1"
     };
   }
 };

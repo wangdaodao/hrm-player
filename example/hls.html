@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HLS切换播放</title>
+  <link rel="stylesheet" href="./lib/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hrm-player/dist/hrm-player.css">
+  <script src="./lib/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hrm-player/dist/hrm-player.umd.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="change(1)">央视1</button>
+    <button @click="change(2)">央视2</button>
+    <button @click="change(3)">央视3</button>
+    <button @click="change(4)">央视4</button>
+    <hrm-player :width="900" :height="500" :autoplay="true" :controls="true" :source="src" />
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        src: "",
+      },
+      methods: {
+        change(val) {
+          switch (val) {
+            case 1:
+              this.src = "http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"
+              break;
+            case 2:
+              this.src = "http://ivi.bupt.edu.cn/hls/cctv2hd.m3u8"
+              break;
+            case 3:
+              this.src = "http://ivi.bupt.edu.cn/hls/cctv3hd.m3u8"
+              break;
+            case 4:
+              this.src = "http://ivi.bupt.edu.cn/hls/cctv4hd.m3u8"
+              break;
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
