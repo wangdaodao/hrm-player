@@ -3,17 +3,17 @@
     <button @click="change(1)">RTMP</button>
     <button @click="change(2)">MP4</button>
     <button @click="change(3)">HLS</button>
-    <vue-videojs-player :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" ref="myPlayer" :source="src" :type="type" />
+    <videojs-player :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" ref="myPlayer" :source="src" :type="type" />
   </div>
 </template>
 
 <script>
-import vueVideojsPlayer from '../src/components/index.js';
+import videojsPlayer from '../src/components/index.js';
 
 export default {
   name: 'App',
   components: {
-    vueVideojsPlayer,
+    videojsPlayer,
   },
   data() {
     return {

@@ -1,12 +1,12 @@
-import vueVideojsPlayer from './index.vue'
+import videojsPlayer from './index.vue'
 
-vueVideojsPlayer.install = function (Vue) {
-  Vue.component(vueVideojsPlayer.name, vueVideojsPlayer)
+videojsPlayer.install = function (Vue) {
+  Vue.component(videojsPlayer.name, videojsPlayer)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.vueVideojsPlayer = vueVideojsPlayer;
-  window.Vue.use(vueVideojsPlayer);
+  window.videojsPlayer = videojsPlayer;
+  window.Vue.use(videojsPlayer);
 }
 
-export default vueVideojsPlayer
+export default videojsPlayer
