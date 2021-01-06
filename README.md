@@ -105,7 +105,7 @@ export default {
 
 ## RTMP直播流
 
-[rtmp](http://demo.const.team/videojs/rtmp.html)
+[RTMP直播流例子](http://demo.const.team/videojs/rtmp.html)
 
 ```vue
 <template>
@@ -133,7 +133,7 @@ export default {
 
 ## HLS直播流+切换直播源
 
-[HLS](http://demo.const.team/videojs/hls.html)
+[HLS直播流+切换直播源](http://demo.const.team/videojs/hls.html)
 
 ```vue
 <template>
