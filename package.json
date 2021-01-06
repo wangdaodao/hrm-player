@@ -1,0 +1,64 @@
+{
+  "name": "vue-videojs-player",
+  "description": "A videojs player component for Vue.js",
+  "version": "1.0.0",
+  "author": "wangdaodao <hi@wangdaodao.com>",
+  "license": "MIT",
+  "private": false,
+  "main": "dist/vue-videojs-player.common.js",
+  "browser": "dist/vue-videojs-player.umd.js",
+  "style": "dist/vue-videojs-player.css",
+  "keywords": [
+    "video",
+    "rtmp",
+    "vue"
+  ],
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "scripts": {
+    "package": "vue-cli-service build --target lib --name vue-videojs-player ./src/components/index.js",
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "video.js": "^7.10.2",
+    "videojs-flash": "^2.2.1",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
