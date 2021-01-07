@@ -1,4 +1,6 @@
-# hrm-player 播放器
+# HRM-Player 播放器
+
+![NPM version](https://img.shields.io/npm/v/hrm-player.svg)
 
 * 😊 基于 Vue + [`Video.js 7+`](https://github.com/videojs/video.js) 开发；
 * 😂 支持现代浏览器；
@@ -84,24 +86,6 @@ export default {
 };
 </script>
 ```
-
-### hrmPlayer Attributes
-| 参数      | 说明    | 类型      | 可选值       | 默认值   |
-|---------- |-------- |---------- |-------------  |-------- |
-| source | 播放流 | string | — | — |
-| type | 流类型 | string | `video/mp4`/`rtmp/flv`/`application/x-mpegURL` | `application/x-mpegURL` |
-| width | 宽度 | number | — | 800 |
-| height | 高度 | number | — | 600 |
-| poster | 视频封面 | string | — | — |
-| muted | 是否静音（bug） | boolean | — | false |
-| autoplay | 是否自动播放 | boolean | — | true |
-| controls | 是否显示控件 | boolean | — | true |
-| preload | 预加载 | string | auto/metadata/none | auto |
-| options | 高级设置会覆盖上面设置 | Object | — | — |
-
-注意：使用`RTMP`直播流默认会调用在线的swf地址：`https://vjs.zencdn.net/swf/5.4.2/video-js.swf`，如果需要替换请配置`options.flash.swf`的地址。
-
-更多配置，请看 `VideoJS` [官方文档](https://docs.videojs.com/)
 
 ## RTMP直播流
 
@@ -219,7 +203,44 @@ export default {
 </script>
 ```
 
+### Attributes
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| source | 播放流 | string | — | — |
+| type | 流类型 | string | `video/mp4`/`rtmp/flv`/`application/x-mpegURL` | `application/x-mpegURL` |
+| width | 宽度 | number | — | 800 |
+| height | 高度 | number | — | 600 |
+| poster | 视频封面 | string | — | — |
+| muted | 是否静音（bug） | boolean | — | false |
+| autoplay | 是否自动播放 | boolean | — | true |
+| controls | 是否显示控件 | boolean | — | true |
+| preload | 预加载 | string | auto/metadata/none | auto |
+| options | 高级设置会覆盖上面设置 | Object | — | — |
+
+注意：使用`RTMP`直播流默认会调用在线的swf地址：`https://vjs.zencdn.net/swf/5.4.2/video-js.swf`，如果需要替换请配置`options.flash.swf`的地址。
+
+更多配置，请看 `VideoJS` [官方文档](https://docs.videojs.com/)
+
+### Events
+| 事件名称      | 说明               | 回调参数      |
+|----------    |--------            |----------    |
+| abort        | 客户端主动终止下载   | event            |
+| loadstart    | 客户端开始请求数据   | event           |
+| loadeddata    | 当浏览器加载音频/视频的当前帧时触发。   | event           |
+| loadedmetadata    | 当浏览器已加载音频/视频的元数据时触发。   | event           |
+| progress     | 客户端正在请求数据   | event            |
+| pause     | 媒体暂停时触发    | event            |
+| play     | 媒体播放时触发    | event            |
+| ready     | 组件就绪时触发    | event            |
+| volumechange     | 音量改变时触发    | event            |
+| fullscreenchange     | 改变全屏时   | event       |
+
+更多事件，请看 `VideoJS` [事件](https://docs.videojs.com/player#event)
+
 ## 测试地址
+
+<details>
+<summary>展开查看</summary>
 
 ```
 # RTMP
@@ -396,3 +417,5 @@ CETV-1高清：http://ivi.bupt.edu.cn/hls/cetv1hd.m3u8
 海南卫视高清：http://ivi.bupt.edu.cn/hls/lyhd.m3u8
 贵州卫视高清：http://ivi.bupt.edu.cn/hls/gzhd.m3u8
 ```
+
+</details>
