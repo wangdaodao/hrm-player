@@ -1,7 +1,7 @@
 {
   "name": "hrm-player",
   "description": "A videojs player component for Vue.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "wangdaodao <hi@wangdaodao.com>",
   "license": "MIT",
   "private": false,
@@ -9,8 +9,10 @@
   "browser": "dist/hrm-player.umd.js",
   "style": "dist/hrm-player.css",
   "keywords": [
-    "video",
+    "videojs",
+    "hls",
     "rtmp",
+    "mp4",
     "vue"
   ],
   "files": [
@@ -24,6 +26,13 @@
     "package": "vue-cli-service build --target lib --name hrm-player ./src/components/index.js",
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wangdaodao/hrm-player"
+  },
+  "bugs": {
+    "url": "https://github.com/wangdaodao/hrm-player/issues"
   },
   "dependencies": {
     "core-js": "^3.6.5",

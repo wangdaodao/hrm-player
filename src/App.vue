@@ -3,7 +3,10 @@
     <button @click="change(1)">RTMP</button>
     <button @click="change(2)">MP4</button>
     <button @click="change(3)">HLS</button>
-    <hrm-player @ready="ready" :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" ref="myPlayer" :source="src" :type="type" />
+    <button @click="pause">pause</button>
+    <button @click="play">play</button>
+    <button @click="setFullScreen">setFullScreen</button>
+    <hrm-player :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" ref="myPlayer" :source="src" :type="type" />
   </div>
 </template>
 
@@ -25,7 +28,7 @@ export default {
     change(val) {
       switch (val) {
         case 1:
-          this.src = 'rtmp://58.200.131.2:1935/livetv/btv1';
+          this.src = 'rtmp://58.200.131.2:1935/livetv/cctv1';
           this.type = 'rtmp/flv'
           break;
         case 2:
@@ -38,8 +41,14 @@ export default {
           break;
       }
     },
-    ready(val){
-      console.log(val)
+    pause(){
+      this.$refs.myPlayer.pause()
+    },
+    play(){
+      this.$refs.myPlayer.play()
+    },
+    setFullScreen(){
+      this.$refs.myPlayer.setFullScreen()
     },
   },
 };

@@ -18,6 +18,7 @@ videojs.addLanguage('zh-CN', video_zhCN);
 //例如：import 组件名称 from '组件路径';
 export default {
   name: 'hrm-player',
+  inheritAttrs: false,
   //引入组件
   props: {
     source: String,
@@ -91,15 +92,41 @@ export default {
         this.myPlayer.play();
       }
     },
-    resetPlayer() {
+    // 播放
+    play(){
+      if (this.myPlayer) {
+        this.myPlayer.play();
+      }
+    },
+    // 暂停
+    pause(){
+      if (this.myPlayer) {
+        this.myPlayer.pause();
+      }
+    },
+    // 获取播放时间
+    currentTime(){
+      if (this.myPlayer) {
+        return this.myPlayer.currentTime();
+      }
+    },
+    // 全屏
+    setFullScreen(){
+      if (this.myPlayer) {
+        this.myPlayer.requestFullscreen();
+      }
+    },
+    // 重置
+    reset() {
       if (this.myPlayer) {
         this.myPlayer.reset();
       }
     },
     // 销毁播放器
-    disposePlayer() {
+    dispose() {
       if (this.myPlayer) {
         this.myPlayer.dispose();
+        this.myPlayer = null;
       }
     },
   },
@@ -121,7 +148,7 @@ export default {
   beforeDestroy() {},
   //生命周期 - 销毁完成
   destroyed() {
-    this.disposePlayer();
+    this.dispose();
   },
   //如果页面有keep-alive缓存功能，这个函数会触发
   activated() {},

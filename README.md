@@ -210,8 +210,9 @@ export default {
 | type | 流类型 | string | `video/mp4`/`rtmp/flv`/`application/x-mpegURL` | `application/x-mpegURL` |
 | width | 宽度 | number | — | 800 |
 | height | 高度 | number | — | 600 |
+| fluid | 播放器是否按比例缩放以适应其容器，为true时，height不起作用 | boolean | — | false |
 | poster | 视频封面 | string | — | — |
-| muted | 是否静音（bug） | boolean | — | false |
+| muted | 是否静音 | boolean | — | false |
 | autoplay | 是否自动播放 | boolean | — | true |
 | controls | 是否显示控件 | boolean | — | true |
 | preload | 预加载 | string | auto/metadata/none | auto |
@@ -236,6 +237,15 @@ export default {
 | fullscreenchange     | 改变全屏时   | event       |
 
 更多事件，请看 `VideoJS` [事件](https://docs.videojs.com/player#event)
+
+### Methods
+| 方法名      | 说明    | 参数        |
+|----------   |--------|----------   |
+| play        | 播放   |             |
+| pause       | 暂停   |             |
+| setFullScreen | 全屏   |      |
+| reset       | 重置   |             |
+| dispose       | 销毁   |             |
 
 ## 测试地址
 
