@@ -1,7 +1,7 @@
 {
   "name": "hrm-player",
   "description": "A videojs player component for Vue.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "wangdaodao <hi@wangdaodao.com>",
   "license": "MIT",
   "private": false,

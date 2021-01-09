@@ -1,5 +1,5 @@
 <template>
-  <video ref="player" class="video-js" data-setup="{}" v-bind="$attrs">
+  <video ref="player" :width="width" :height="height" class="video-js" data-setup="{}" v-bind="$attrs">
     <p class="vjs-no-js">
       您的浏览器不支持 video 标签。
     </p>
@@ -25,6 +25,14 @@ export default {
     type: {
       type: String,
       default: 'application/x-mpegURL',
+    },
+    width: {
+      type: Number,
+      default: 800,
+    },
+    height: {
+      type: Number,
+      default: 600,
     },
     options: {
       type: Object,
