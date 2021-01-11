@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hrmPlayer.vue renders 1`] = `
+<video data-setup="{}" class="vjs-tech" id="vjs_video_3_html5_api" tabindex="-1">
+  <p class="vjs-no-js">
+    您的浏览器不支持 video 标签。
+  </p>
+</video>
+`;

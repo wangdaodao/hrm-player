@@ -1,20 +1,17 @@
 {
   "name": "hrm-player",
-  "description": "A videojs player component for Vue.js",
   "version": "1.0.2",
-  "author": "wangdaodao <hi@wangdaodao.com>",
-  "license": "MIT",
   "private": false,
+  "description": "A videojs player component for Vue.js",
+  "author": "wangdaodao <hi@wangdaodao.com>",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
+    "package": "vue-cli-service build --target lib --name hrm-player ./src/components/index.js"
+  },
   "main": "dist/hrm-player.common.js",
   "browser": "dist/hrm-player.umd.js",
-  "style": "dist/hrm-player.css",
-  "keywords": [
-    "videojs",
-    "hls",
-    "rtmp",
-    "mp4",
-    "vue"
-  ],
   "files": [
     "dist/*",
     "src/*",
@@ -22,18 +19,6 @@
     "*.json",
     "*.js"
   ],
-  "scripts": {
-    "package": "vue-cli-service build --target lib --name hrm-player ./src/components/index.js",
-    "serve": "vue-cli-service serve",
-    "lint": "vue-cli-service lint"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:wangdaodao/hrm-player"
-  },
-  "bugs": {
-    "url": "https://github.com/wangdaodao/hrm-player/issues"
-  },
   "dependencies": {
     "core-js": "^3.6.5",
     "video.js": "^7.10.2",
@@ -43,7 +28,10 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "^4.5.10",
     "@vue/cli-service": "~4.5.0",
+    "@vue/server-test-utils": "^1.1.2",
+    "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
@@ -63,11 +51,38 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {},
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/wangdaodao/hrm-player/issues"
+  },
+  "keywords": [
+    "videojs",
+    "hls",
+    "rtmp",
+    "mp4",
+    "vue"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wangdaodao/hrm-player"
+  },
+  "style": "dist/hrm-player.css"
 }
