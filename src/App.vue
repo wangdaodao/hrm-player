@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <button @click="change(1)">RTMP</button>
-    <button @click="change(2)">MP4</button>
-    <button @click="change(3)">HLS</button>
+    <button id="rtmp" @click="change(1)">RTMP</button>
+    <button id="mp4" @click="change(2)">MP4</button>
+    <button id="hls" @click="change(3)">HLS</button>
     <button @click="pause">pause</button>
     <button @click="play">play</button>
-    <button @click="setFullScreen">setFullScreen</button>
+    <button id="full" @click="setFullScreen">setFullScreen</button>
     <hrm-player :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" ref="myPlayer" :source="src" :type="type" />
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   },
   data() {
     return {
-      type: null,
+      type: '',
       src: '',
     };
   },
