@@ -6,7 +6,7 @@
     <button @click="pause">pause</button>
     <button @click="play">play</button>
     <button id="full" @click="setFullScreen">setFullScreen</button>
-    <hrm-player :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" ref="myPlayer" :source="src" :type="type" />
+    <hrm-player :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" ref="myPlayer" @init="aaa" :source="src" :type="type" />
   </div>
 </template>
 
@@ -25,6 +25,9 @@ export default {
     };
   },
   methods: {
+    aaa(obj){
+      console.log('a',obj)
+    },
     change(val) {
       switch (val) {
         case 1:

@@ -7,7 +7,9 @@
 </template>
 
 <script>
-import videojs from 'video.js';
+import _videojs from 'video.js'
+const videojs = window.videojs || _videojs
+
 import 'videojs-flash';
 import 'video.js/dist/video-js.min.css';
 import video_zhCN from 'video.js/dist/lang/zh-CN.json';
@@ -86,6 +88,7 @@ export default {
           if (_this.source) {
             _this.changeSource(_this.source, _this.type);
           }
+          _this.$emit('init', this)
         }
       );
     },

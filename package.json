@@ -1,6 +1,6 @@
 {
   "name": "hrm-player",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "description": "A videojs player component for Vue.js",
   "author": "wangdaodao <hi@wangdaodao.com>",
@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "core-js": "^3.6.5",
-    "video.js": "^7.10.2",
+    "video.js": "^7.11.4",
     "videojs-flash": "^2.2.1",
     "vue": "^2.6.11"
   },
