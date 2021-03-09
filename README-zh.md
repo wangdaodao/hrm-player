@@ -1,32 +1,35 @@
-# HRM-Player
+# HRM-Player 播放器
 
 ![NPM version](https://img.shields.io/npm/v/hrm-player.svg) ![GitHub stars](https://img.shields.io/github/stars/wangdaodao/hrm-player.svg) ![GitHub issues](https://img.shields.io/github/issues/wangdaodao/hrm-player.svg) ![GitHub forks](https://img.shields.io/github/forks/wangdaodao/hrm-player.svg)
 
-* 😊 Vue + [`Video.js 7+`](https://github.com/videojs/video.js);
-* 😂 Support for modern browsers;
-* 😂 Use **RTMP**,Please make sure the browser is installed[flash player](https://www.flash.cn/cdm/latest/flashplayer_install_cn.exe)；
-* 🀄 [中文文档](./README-zh.md)
+* 😊 基于 Vue + [`Video.js 7+`](https://github.com/videojs/video.js) 开发；
+* 😂 支持现代浏览器；
+* 😂 使用**RTMP**直播流时，请确保浏览器已经安装[flash播放器](https://www.flash.cn/cdm/latest/flashplayer_install_cn.exe)；
 
-## NPM
+## NPM安装
 
 ```bash
 npm i hrm-player --save
 ```
 
-## CDN
+## CDN引用
 
-Get the latest version from [unpkg.com/hrm-player](https://unpkg.com/hrm-player) or [www.jsdelivr.com/package/npm/hrm-player](https://www.jsdelivr.com/package/npm/hrm-player) , and import JavaScript and CSS file in your page.
+目前可以通过 [unpkg.com/hrm-player](https://unpkg.com/hrm-player) 或者 [www.jsdelivr.com/package/npm/hrm-player](https://www.jsdelivr.com/package/npm/hrm-player) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
 
 ```html
+<!-- 引入样式 -->
 <link rel="stylesheet" href="https://unpkg.com/hrm-player/dist/hrm-player.css">
+<!-- 引入组件库 -->
 <script src="https://unpkg.com/hrm-player/dist/hrm-player.umd.min.js"></script>
 
-<!-- or -->
+<!-- 或者 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hrm-player/dist/hrm-player.css">
 <script src="https://cdn.jsdelivr.net/npm/hrm-player/dist/hrm-player.umd.min.js"></script>
 ```
 
-## Quick Start
+## 使用
+
+### 全局使用
 
 ```js
 // main.js
@@ -57,9 +60,36 @@ export default {
 </script>
 ```
 
-## RTMP
+### 局部使用
 
-[RTMP demo](http://demo.const.team/videojs/rtmp.html)
+```vue
+<template>
+  <div id="app">
+    <hrm-player :width="900" :height="500" :autoplay="true" :controls="true" ref="myPlayer" :source="src"/>
+  </div>
+</template>
+
+<script>
+import 'hrm-player/dist/hrm-player.css'
+import hrmPlayer from 'hrm-player'
+
+export default {
+  name: 'App',
+  components: {
+    hrmPlayer,
+  },
+  data() {
+    return {
+      src:"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"
+    };
+  }
+};
+</script>
+```
+
+## RTMP直播流
+
+[RTMP直播流例子](http://demo.const.team/videojs/rtmp.html)
 
 ```vue
 <template>
@@ -85,9 +115,9 @@ export default {
 </script>
 ```
 
-## HLS
+## HLS直播流+切换直播源
 
-[HLS demo](http://demo.const.team/videojs/hls.html)
+[HLS直播流+切换直播源](http://demo.const.team/videojs/hls.html)
 
 ```vue
 <template>
@@ -129,9 +159,9 @@ export default {
 </script>
 ```
 
-## Change type
+## 切换直播类型
 
-[Change type](http://demo.const.team/videojs/all.html)
+[切换直播类型](http://demo.const.team/videojs/all.html)
 
 ```vue
 <template>
@@ -174,53 +204,53 @@ export default {
 ```
 
 ### Attributes
-| Attribute      | Description    | Type      | Accepted Values       | Default   |
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
-| source | source | string | — | — |
-| type | type | string | `video/mp4`/`rtmp/flv`/`application/x-mpegURL` | `application/x-mpegURL` |
-| width | width | number | — | 800 |
-| height | height | number | — | 600 |
-| fluid | Does the player scale to fit its container | boolean | — | false |
-| poster | Video cover | string | — | — |
-| muted | muted | boolean | — | false |
-| autoplay | autoplay | boolean | — | true |
-| controls | controls | boolean | — | true |
-| preload | preload | string | auto/metadata/none | auto |
-| options | Advanced settings will override the above settings | Object | — | — |
+| source | 播放流 | string | — | — |
+| type | 流类型 | string | `video/mp4`/`rtmp/flv`/`application/x-mpegURL` | `application/x-mpegURL` |
+| width | 宽度 | number | — | 800 |
+| height | 高度 | number | — | 600 |
+| fluid | 播放器是否按比例缩放以适应其容器，为true时，height不起作用 | boolean | — | false |
+| poster | 视频封面 | string | — | — |
+| muted | 是否静音 | boolean | — | false |
+| autoplay | 是否自动播放 | boolean | — | true |
+| controls | 是否显示控件 | boolean | — | true |
+| preload | 预加载 | string | auto/metadata/none | auto |
+| options | 高级设置会覆盖上面设置 | Object | — | — |
 
-Notice：`RTMP` use online SWF address：`https://vjs.zencdn.net/swf/5.4.2/video-js.swf`, If replacement address, please revise `options.flash.swf`。
+注意：使用`RTMP`直播流默认会调用在线的swf地址：`https://vjs.zencdn.net/swf/5.4.2/video-js.swf`，如果需要替换请配置`options.flash.swf`的地址。
 
-More options, look `VideoJS` [document](https://docs.videojs.com/)
+更多配置，请看 `VideoJS` [官方文档](https://docs.videojs.com/)
 
 ### Events
-| Event Name      | Description               | Parameters      |
+| 事件名称      | 说明               | 回调参数      |
 |----------    |--------            |----------    |
-| abort        | Fires when the loading of an audio/video is aborted.   | event            |
-| loadstart    | Fired when the user agent begins looking for media data   | event           |
-| loadeddata    | Fires when the browser has loaded the current frame of the audio/video.   | event           |
-| loadedmetadata    | Fires when the browser has loaded meta data for the audio/video.   | event           |
-| progress     | Fired while the user agent is downloading media data.   | event            |
-| pause     | Fired whenever the media has been paused    | event            |
-| play     | Triggered whenever an Tech#play event happens. Indicates that playback has started or resumed.    | event            |
-| ready     | Triggered when a Component is ready.    | event            |
-| volumechange     | Fires when the volume has been changed    | event            |
-| fullscreenchange     | fullscreen changed   | event       |
+| abort        | 客户端主动终止下载   | event            |
+| loadstart    | 客户端开始请求数据   | event           |
+| loadeddata    | 当浏览器加载音频/视频的当前帧时触发。   | event           |
+| loadedmetadata    | 当浏览器已加载音频/视频的元数据时触发。   | event           |
+| progress     | 客户端正在请求数据   | event            |
+| pause     | 媒体暂停时触发    | event            |
+| play     | 媒体播放时触发    | event            |
+| ready     | 组件就绪时触发    | event            |
+| volumechange     | 音量改变时触发    | event            |
+| fullscreenchange     | 改变全屏时   | event       |
 
-More events, look `VideoJS` [event](https://docs.videojs.com/player#event)
+更多事件，请看 `VideoJS` [事件](https://docs.videojs.com/player#event)
 
 ### Methods
-| Method      | Description    | Parameters        |
+| 方法名      | 说明    | 参数        |
 |----------   |--------|----------   |
-| play        | play   |             |
-| pause       | pause   |             |
-| setFullScreen | Full screen  |      |
-| reset       | reset   |             |
-| dispose       | dispose   |             |
+| play        | 播放   |             |
+| pause       | 暂停   |             |
+| setFullScreen | 全屏   |      |
+| reset       | 重置   |             |
+| dispose       | 销毁   |             |
 
-## Test address
+## 测试地址
 
 <details>
-<summary>Expand</summary>
+<summary>展开查看</summary>
 
 ```
 # RTMP
