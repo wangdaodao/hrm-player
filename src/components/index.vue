@@ -131,6 +131,7 @@ export default {
     reset() {
       if (this.myPlayer) {
         this.myPlayer.reset();
+        this.myPlayer.hasStarted(false);
       }
     },
     // 销毁播放器

@@ -5,6 +5,7 @@
     <button id="hls" @click="change(3)">HLS</button>
     <button @click="pause">pause</button>
     <button @click="play">play</button>
+    <button @click="reset">reset</button>
     <button id="full" @click="setFullScreen">setFullScreen</button>
     <hrm-player :width="900" :height="500" :muted="true" :autoplay="true" :controls="true" ref="myPlayer" @init="aaa" :source="src" :type="type" />
   </div>
@@ -29,6 +30,7 @@ export default {
       console.log('a',obj)
     },
     change(val) {
+      console.log(val)
       switch (val) {
         case 1:
           this.src = 'rtmp://58.200.131.2:1935/livetv/cctv1';
@@ -49,6 +51,9 @@ export default {
     },
     play(){
       this.$refs.myPlayer.play()
+    },
+    reset(){
+      this.$refs.myPlayer.reset()
     },
     setFullScreen(){
       this.$refs.myPlayer.setFullScreen()
