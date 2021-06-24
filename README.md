@@ -1,6 +1,6 @@
 # HRM-Player
 
-![NPM version](https://img.shields.io/npm/v/hrm-player.svg) ![GitHub stars](https://img.shields.io/github/stars/wangdaodao/hrm-player.svg) ![GitHub issues](https://img.shields.io/github/issues/wangdaodao/hrm-player.svg) ![GitHub forks](https://img.shields.io/github/forks/wangdaodao/hrm-player.svg)
+![NPM Publish](https://github.com/wangdaodao/hrm-player/actions/workflows/npm-publish.yml/badge.svg) ![NPM version](https://img.shields.io/npm/v/hrm-player.svg) ![GitHub stars](https://img.shields.io/github/stars/wangdaodao/hrm-player.svg) ![GitHub issues](https://img.shields.io/github/issues/wangdaodao/hrm-player.svg) ![GitHub forks](https://img.shields.io/github/forks/wangdaodao/hrm-player.svg)
 
 * 😊 Vue + [`Video.js 7+`](https://github.com/videojs/video.js);
 * 😂 Support for modern browsers;
