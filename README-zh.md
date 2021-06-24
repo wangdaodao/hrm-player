@@ -6,13 +6,15 @@
 * 😂 支持现代浏览器；
 * 😂 使用**RTMP**直播流时，请确保浏览器已经安装[flash播放器](https://www.flash.cn/cdm/latest/flashplayer_install_cn.exe)；
 
-## NPM安装
+## 安装
+
+### NPM
 
 ```bash
 npm i hrm-player --save
 ```
 
-## CDN引用
+### CDN
 
 目前可以通过 [unpkg.com/hrm-player](https://unpkg.com/hrm-player) 或者 [www.jsdelivr.com/package/npm/hrm-player](https://www.jsdelivr.com/package/npm/hrm-player) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
 
@@ -87,9 +89,9 @@ export default {
 </script>
 ```
 
-## RTMP直播流
+## 例子
 
-[RTMP直播流例子](http://demo.const.team/videojs/rtmp.html)
+### RTMP直播流
 
 ```vue
 <template>
@@ -115,9 +117,7 @@ export default {
 </script>
 ```
 
-## HLS直播流+切换直播源
-
-[HLS直播流+切换直播源](http://demo.const.team/videojs/hls.html)
+### HLS直播流+切换直播源
 
 ```vue
 <template>
@@ -159,7 +159,7 @@ export default {
 </script>
 ```
 
-## 切换直播类型
+### 切换直播类型
 
 [切换直播类型](http://demo.const.team/videojs/all.html)
 
@@ -203,7 +203,7 @@ export default {
 </script>
 ```
 
-### Attributes
+## 属性
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | source | 播放流 | string | — | — |
@@ -222,7 +222,7 @@ export default {
 
 更多配置，请看 `VideoJS` [官方文档](https://docs.videojs.com/)
 
-### Events
+## 事件
 | 事件名称      | 说明               | 回调参数      |
 |----------    |--------            |----------    |
 | abort        | 客户端主动终止下载   | event            |
@@ -238,7 +238,7 @@ export default {
 
 更多事件，请看 `VideoJS` [事件](https://docs.videojs.com/player#event)
 
-### Methods
+## 方法
 | 方法名      | 说明    | 参数        |
 |----------   |--------|----------   |
 | play        | 播放   |             |

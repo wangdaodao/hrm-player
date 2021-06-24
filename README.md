@@ -7,13 +7,15 @@
 * 😂 Use **RTMP**,Please make sure the browser is installed[flash player](https://www.flash.cn/cdm/latest/flashplayer_install_cn.exe)；
 * 🀄 [中文文档](./README-zh.md)
 
-## NPM
+## Install
+
+### NPM
 
 ```bash
 npm i hrm-player --save
 ```
 
-## CDN
+### CDN
 
 Get the latest version from [unpkg.com/hrm-player](https://unpkg.com/hrm-player) or [www.jsdelivr.com/package/npm/hrm-player](https://www.jsdelivr.com/package/npm/hrm-player) , and import JavaScript and CSS file in your page.
 
@@ -57,9 +59,9 @@ export default {
 </script>
 ```
 
-## RTMP
+## Example
 
-[RTMP demo](http://demo.const.team/videojs/rtmp.html)
+### RTMP
 
 ```vue
 <template>
@@ -85,9 +87,7 @@ export default {
 </script>
 ```
 
-## HLS
-
-[HLS demo](http://demo.const.team/videojs/hls.html)
+### HLS
 
 ```vue
 <template>
@@ -129,9 +129,7 @@ export default {
 </script>
 ```
 
-## Change type
-
-[Change type](http://demo.const.team/videojs/all.html)
+### Change type
 
 ```vue
 <template>
@@ -173,7 +171,7 @@ export default {
 </script>
 ```
 
-### Attributes
+## Attributes
 | Attribute      | Description    | Type      | Accepted Values       | Default   |
 |---------- |-------- |---------- |-------------  |-------- |
 | source | source | string | — | — |
@@ -192,7 +190,7 @@ Notice：`RTMP` use online SWF address：`https://vjs.zencdn.net/swf/5.4.2/video
 
 More options, look `VideoJS` [document](https://docs.videojs.com/)
 
-### Events
+## Events
 | Event Name      | Description               | Parameters      |
 |----------    |--------            |----------    |
 | abort        | Fires when the loading of an audio/video is aborted.   | event            |
@@ -208,7 +206,7 @@ More options, look `VideoJS` [document](https://docs.videojs.com/)
 
 More events, look `VideoJS` [event](https://docs.videojs.com/player#event)
 
-### Methods
+## Methods
 | Method      | Description    | Parameters        |
 |----------   |--------|----------   |
 | play        | play   |             |
