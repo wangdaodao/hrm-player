@@ -161,8 +161,6 @@ export default {
 
 ### 切换直播类型
 
-[切换直播类型](http://demo.const.team/videojs/all.html)
-
 ```vue
 <template>
   <div>
